@@ -93,13 +93,14 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(180, 35);
+            this.label1.Location = new System.Drawing.Point(59, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 32);
+            this.label1.Size = new System.Drawing.Size(433, 32);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Notiflix C#";
+            this.label1.Text = "Custom Notiflix With C# WinForm";
             // 
             // Form1
             // 
