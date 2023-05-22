@@ -92,6 +92,7 @@ namespace CustomAlertBoxDemo
                 if (frm == null)
                 {
                     this.Name = fname;
+                    //The Working Area is Destop Area of the display
                     this.x = Screen.PrimaryScreen.WorkingArea.Width - this.Width + 15; //MediaQuery : take width of Screen
                     this.y = Screen.PrimaryScreen.WorkingArea.Height - this.Height * i - 5 * i;//take Screen Height
                     this.Location = new Point(this.x, this.y);
