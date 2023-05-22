@@ -36,11 +36,6 @@ namespace CustomAlertBoxDemo
 
         private int x, y;
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             switch(this.action)
@@ -86,22 +81,21 @@ namespace CustomAlertBoxDemo
         public void showAlert(string msg, enmType type)
         {
             this.Opacity = 0.0;
-            this.StartPosition = FormStartPosition.Manual;
+            this.StartPosition = FormStartPosition.Manual;// take location as in control
             string fname;
 
             for (int i = 1; i < 10; i++)
             {
                 fname = "alert" + i.ToString();
-                Form_Alert frm = (Form_Alert)Application.OpenForms[fname];
+                Form_Alert frm = (Form_Alert)Application.OpenForms[fname];//Logic : take the current open Form
 
                 if (frm == null)
                 {
                     this.Name = fname;
-                    this.x = Screen.PrimaryScreen.WorkingArea.Width - this.Width + 15;
-                    this.y = Screen.PrimaryScreen.WorkingArea.Height - this.Height * i - 5 * i;
+                    this.x = Screen.PrimaryScreen.WorkingArea.Width - this.Width + 15; //MediaQuery : take width of Screen
+                    this.y = Screen.PrimaryScreen.WorkingArea.Height - this.Height * i - 5 * i;//take Screen Height
                     this.Location = new Point(this.x, this.y);
                     break;
-
                 }
 
             }
