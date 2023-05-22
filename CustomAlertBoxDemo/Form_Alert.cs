@@ -41,7 +41,7 @@ namespace CustomAlertBoxDemo
             switch(this.action)
             {
                 case enmAction.wait:
-                    timer1.Interval = 5000;
+                    timer1.Interval = 3000;
                     action = enmAction.close;
                     break;
                 case Form_Alert.enmAction.start:
@@ -93,8 +93,16 @@ namespace CustomAlertBoxDemo
                 {
                     this.Name = fname;
                     //The Working Area is Destop Area of the display
+                    // this.width is the width of Form defined in Control
                     this.x = Screen.PrimaryScreen.WorkingArea.Width - this.Width + 15; //MediaQuery : take width of Screen
+                    //this.x = Screen.PrimaryScreen.WorkingArea.Width - (this.Width + 5) * i;
+                   // this.y = Screen.PrimaryScreen.WorkingArea.Height - this.Height * i;
                     this.y = Screen.PrimaryScreen.WorkingArea.Height - this.Height * i - 5 * i;//take Screen Height
+                    /*When i=0 => start at 0,0 y=> - 3*0-5*0 =0
+                     * i => 1 start at 0,8 y => -3*1-5*1=8 (0,8)
+                     * i => 2 start at 0,16 y => 16
+                     * Formula : (height+gap)*i;
+                     */
                     this.Location = new Point(this.x, this.y);
                     break;
                 }
@@ -125,7 +133,7 @@ namespace CustomAlertBoxDemo
 
             this.lblMsg.Text = msg;
 
-            this.Show();
+            this.Show(); //the main to show Form
             this.action = enmAction.start;
             this.timer1.Interval = 1;
             this.timer1.Start();
